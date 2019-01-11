@@ -1,0 +1,49 @@
+<div class="ui top attached borderless menu">
+  <div class="header item">Admin Attitudes</div>
+  <div class="right menu">
+    <div class="item">
+      <%= link_to 'New Admin Attitude', new_admin_attitude_path, class: 'ui teal button' %>
+    </div>
+  </div>
+</div>
+
+<div class="ui attached segment">
+  <%= render 'search_form' %>
+</div>
+
+<table class="ui bottom attached table">
+  <thead>
+    <tr>
+      <th><%= Attitude.human_attribute_name(:id) %></th>
+      <th><%= Attitude.human_attribute_name(:user_id) %></th>
+      <th><%= Attitude.human_attribute_name(:opinion) %></th>
+      <th><%= Attitude.human_attribute_name(:attitudinal_type) %></th>
+      <th><%= Attitude.human_attribute_name(:attitudinal_id) %></th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @attitudes.each do |attitude| %>
+    <tr>
+      <td><%= attitude.id %></td>
+      <td><%= attitude.user_id %></td>
+      <td><%= attitude.opinion %></td>
+      <td><%= attitude.attitudinal_type %></td>
+      <td><%= attitude.attitudinal_id %></td>
+      <td class="ui labels">
+        <%= link_to admin_attitude_path(attitude), data: { tooltip: t('.show') }, class: 'ui blue mini icon button' do %>
+          <i class="location arrow icon"></i>
+        <% end %>
+        <%= link_to edit_admin_attitude_path(attitude), data: { tooltip: t('.edit') }, class: 'ui pink mini icon button' do %>
+          <i class="pencil alternate icon"></i>
+        <% end %>
+        <%= link_to admin_attitude_path(attitude), method: :delete, data: { tooltip: t('.destroy'), confirm: 'Are you sure?' }, class: 'ui red mini icon button' do %>
+          <i class="times icon"></i>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= paginate @attitudes %>

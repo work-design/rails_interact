@@ -1,0 +1,17 @@
+<div class="ui vertical fluid icon menu">
+  <div class="header center link item" id="close_side">
+    <i class="content icon"></i>
+  </div>
+  <div class="item ui dropdown">
+    <a class="<%= active_helper(controllers: ['stars', 'comments', 'attitudes'], active_class: 'title active', item_class: 'title') %>">
+      <i class="star icon"></i>
+      <span>收藏</span>
+    </a>
+    <div class="<%= active_helper(controllers: ['stars', 'comments', 'attitudes'], active_class: 'menu content active', item_class: 'menu content') %>">
+      <%= link_to '收藏管理', admin_stars_path, class: active_helper(controllers: 'stars') %>
+      <%= link_to '评论管理', admin_comments_path, class: active_helper(controllers: 'comments') %>
+      <%= link_to '点赞管理', admin_attitudes_path, class: active_helper(controllers: 'attitudes') %>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,22 @@
+<div class="ui segment breadcrumb">
+  <%= link_to 'Back', admin_stars_path, class: 'section' %>
+  <div class="divider">/</div>
+  <div class="active section">Show</div>
+</div>
+
+<table class="ui very basic large table">
+  <tbody>
+    <tr>
+      <td class="right aligned"><%= Star.human_attribute_name(:user_id) %></td>
+      <td><%= @star.user_id %></td>
+    </tr>
+    <tr>
+      <td class="right aligned"><%= Star.human_attribute_name(:starred_type) %></td>
+      <td><%= @star.starred_type %></td>
+    </tr>
+    <tr>
+      <td class="right aligned"><%= Star.human_attribute_name(:starred_id) %></td>
+      <td><%= @star.starred_id %></td>
+    </tr>
+  </tbody>
+</table>

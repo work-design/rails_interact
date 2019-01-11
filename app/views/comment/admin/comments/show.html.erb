@@ -1,0 +1,22 @@
+<div class="ui segment breadcrumb">
+  <%= link_to 'Back', comments_path, class: 'section' %>
+  <div class="divider">/</div>
+  <div class="active section">Show</div>
+</div>
+
+<table class="ui very basic large table">
+  <tbody>
+    <tr>
+      <td class="right aligned"><%= Comment.human_attribute_name(:title) %></td>
+      <td><%= @comment.title %></td>
+    </tr>
+    <tr>
+      <td class="right aligned"><%= Comment.human_attribute_name(:content) %></td>
+      <td><%= @comment.content %></td>
+    </tr>
+    <tr>
+      <td class="right aligned"><%= Comment.human_attribute_name(:state) %></td>
+      <td><%= @comment.state %></td>
+    </tr>
+  </tbody>
+</table>

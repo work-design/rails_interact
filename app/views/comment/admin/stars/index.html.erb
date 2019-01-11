@@ -1,0 +1,47 @@
+<div class="ui top attached borderless menu">
+  <div class="header item">Admin Stars</div>
+  <div class="right menu">
+    <div class="item">
+      <%= link_to 'New Admin Star', new_admin_star_path, class: 'ui teal button' %>
+    </div>
+  </div>
+</div>
+
+<div class="ui attached segment">
+  <%= render 'search_form' %>
+</div>
+
+<table class="ui bottom attached table">
+  <thead>
+    <tr>
+      <th><%= Star.human_attribute_name(:id) %></th>
+      <th><%= Star.human_attribute_name(:user_id) %></th>
+      <th><%= Star.human_attribute_name(:starred_type) %></th>
+      <th><%= Star.human_attribute_name(:starred_id) %></th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @stars.each do |star| %>
+    <tr>
+      <td><%= star.id %></td>
+      <td><%= star.user_id %></td>
+      <td><%= star.starred_type %></td>
+      <td><%= star.starred_id %></td>
+      <td class="ui labels">
+        <%= link_to admin_star_path(star), data: { tooltip: t('.show') }, class: 'ui blue mini icon button' do %>
+          <i class="location arrow icon"></i>
+        <% end %>
+        <%= link_to edit_admin_star_path(star), data: { tooltip: t('.edit') }, class: 'ui pink mini icon button' do %>
+          <i class="pencil alternate icon"></i>
+        <% end %>
+        <%= link_to admin_star_path(star), method: :delete, data: { tooltip: t('.destroy'), confirm: 'Are you sure?' }, class: 'ui red mini icon button' do %>
+          <i class="times icon"></i>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= paginate @stars %>

@@ -1,0 +1,41 @@
+<div class="ui top attached borderless menu">
+  <div class="header item">My Attitudes</div>
+  <div class="right menu">
+    <div class="item">
+      <%= link_to 'New My Attitude', new_my_attitude_path, class: 'ui teal button' %>
+    </div>
+  </div>
+</div>
+
+<div class="ui attached segment">
+  <%= render 'search_form' %>
+</div>
+
+<table class="ui bottom attached table">
+  <thead>
+    <tr>
+      <th><%= Attitude.human_attribute_name(:id) %></th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @attitudes.each do |attitude| %>
+    <tr>
+      <td><%= attitude.id %></td>
+      <td class="ui labels">
+        <%= link_to my_attitude_path(attitude), data: { tooltip: t('.show') }, class: 'ui blue mini icon button' do %>
+          <i class="location arrow icon"></i>
+        <% end %>
+        <%= link_to edit_my_attitude_path(attitude), data: { tooltip: t('.edit') }, class: 'ui pink mini icon button' do %>
+          <i class="pencil alternate icon"></i>
+        <% end %>
+        <%= link_to my_attitude_path(attitude), method: :delete, data: { tooltip: t('.destroy'), confirm: 'Are you sure?' }, class: 'ui red mini icon button' do %>
+          <i class="times icon"></i>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= paginate @attitudes %>

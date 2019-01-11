@@ -1,0 +1,8 @@
+<%= form_with model: @attitude, local: true do |f| %>
+  <%= render 'shared/error_messages', target: @attitude %>
+  <%= f.text_field :user_id %>
+  <%= f.text_field :opinion %>
+  <%= f.text_field :attitudinal_type %>
+  <%= f.text_field :attitudinal_id %>
+  <%= f.submit %>
+<% end %>

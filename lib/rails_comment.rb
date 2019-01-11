@@ -1,5 +1,2 @@
-require "rails_comment/engine"
-
-module RailsComment
-  # Your code goes here...
-end
+require 'rails_comment/engine'
+require 'rails_comment/config'

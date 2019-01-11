@@ -1,0 +1,26 @@
+<div class="ui segment breadcrumb">
+  <%= link_to 'Back', admin_attitudes_path, class: 'section' %>
+  <div class="divider">/</div>
+  <div class="active section">Show</div>
+</div>
+
+<table class="ui very basic large table">
+  <tbody>
+    <tr>
+      <td class="right aligned"><%= Attitude.human_attribute_name(:user_id) %></td>
+      <td><%= @attitude.user_id %></td>
+    </tr>
+    <tr>
+      <td class="right aligned"><%= Attitude.human_attribute_name(:opinion) %></td>
+      <td><%= @attitude.opinion %></td>
+    </tr>
+    <tr>
+      <td class="right aligned"><%= Attitude.human_attribute_name(:attitudinal_type) %></td>
+      <td><%= @attitude.attitudinal_type %></td>
+    </tr>
+    <tr>
+      <td class="right aligned"><%= Attitude.human_attribute_name(:attitudinal_id) %></td>
+      <td><%= @attitude.attitudinal_id %></td>
+    </tr>
+  </tbody>
+</table>
