@@ -1,4 +1,4 @@
-class Comment::Admin::CommentsController < Comment::Admin::BaseController
+class Interact::Admin::CommentsController < Interact::Admin::BaseController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
   def index

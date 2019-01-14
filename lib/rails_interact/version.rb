@@ -1,3 +1,3 @@
-module RailsComment
+module RailsInteract
   VERSION = '0.1.0'
 end

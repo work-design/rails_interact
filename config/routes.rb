@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  scope :my, module: 'comment/my', as: :my do
+  scope :my, module: 'interact/my', as: :my do
     scope ':commentable_type/:commentable_id' do
       resources :comments
     end
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     end
   end
 
-  scope :api, module: 'comment/api', as: :api do
+  scope :api, module: 'interact/api', as: :api do
     scope ':commentable_type/:commentable_id' do
       resources :comments, only: [:index, :show, :create, :update, :destroy]
     end
@@ -31,7 +31,7 @@ Rails.application.routes.draw do
     end
   end
 
-  scope :admin, module: 'comment/admin', as: 'admin' do
+  scope :admin, module: 'interact/admin', as: 'admin' do
     resources :comments
     resources :attitudes
     resources :stars

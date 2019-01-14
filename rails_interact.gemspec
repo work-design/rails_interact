@@ -1,14 +1,14 @@
 $:.push File.expand_path('lib', __dir__)
-require 'rails_comment/version'
+require 'rails_interact/version'
 
 Gem::Specification.new do |spec|
-  spec.name = 'rails_comment'
-  spec.version = RailsComment::VERSION
+  spec.name = 'rails_interact'
+  spec.version = RailsInteract::VERSION
   spec.authors = ['qinmingyuan']
   spec.email = ['mingyuan0715@foxmail.com']
   spec.homepage = ''
-  spec.summary = 'Summary of RailsComment.'
-  spec.description = 'Description of RailsComment.'
+  spec.summary = 'Summary of RailsInteract.'
+  spec.description = 'Description of RailsInteract.'
   spec.license = 'MIT'
 
   spec.files = Dir[

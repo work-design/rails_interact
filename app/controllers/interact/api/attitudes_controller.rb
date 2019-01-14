@@ -1,4 +1,4 @@
-class Comment::Api::AttitudesController < Comment::Api::BaseController
+class Interact::Api::AttitudesController < Interact::Api::BaseController
   before_action :set_attitude, only: [:show, :update, :destroy]
 
   def index

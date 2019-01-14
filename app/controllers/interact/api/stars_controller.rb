@@ -1,4 +1,4 @@
-class Comment::Api::StarsController < Comment::Api::BaseController
+class Interact::Api::StarsController < Interact::Api::BaseController
 
   def index
     q_params = { starred_type: 'Post' }.with_indifferent_access

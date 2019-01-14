@@ -1,4 +1,4 @@
-class Comment::Admin::StarsController < Comment::Admin::BaseController
+class Interact::Admin::StarsController < Interact::Admin::BaseController
   before_action :set_star, only: [:show, :edit, :update, :destroy]
 
   def index

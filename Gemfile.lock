@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rails_comment (0.1.0)
+    rails_interact (0.1.0)
       rails_com (~> 1.2)
 
 GEM
@@ -136,7 +136,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  rails_comment!
+  rails_interact!
   sqlite3
 
 BUNDLED WITH

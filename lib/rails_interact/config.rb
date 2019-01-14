@@ -1,6 +1,6 @@
 require 'active_support/configurable'
 
-module RailsComment
+module RailsInteract
   include ActiveSupport::Configurable
 
   configure do |config|

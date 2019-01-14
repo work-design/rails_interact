@@ -1,4 +1,4 @@
-class Comment::Api::CommentsController < Comment::Api::BaseController
+class Interact::Api::CommentsController < Interact::Api::BaseController
   before_action :set_comment, only: [:show, :update, :destroy]
   skip_before_action :require_login_from_token, only: [:index]
 
