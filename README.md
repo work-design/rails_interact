@@ -1,4 +1,4 @@
-# RailsComment
+# RailsInteract
 Short description and motivation.
 
 ## Usage
@@ -8,7 +8,7 @@ How to use my plugin.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'rails_comment'
+gem 'rails_interact'
 ```
 
 And then execute:
@@ -18,7 +18,7 @@ $ bundle
 
 Or install it yourself as:
 ```bash
-$ gem install rails_comment
+$ gem install rails_interact
 ```
 
 ## Contributing
