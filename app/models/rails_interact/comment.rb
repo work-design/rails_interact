@@ -1,5 +1,5 @@
 class Comment < ApplicationRecord
-  include RailsCommentLike
+  include RailsInteractLike
   attribute :score, :float, default: 0
   attribute :liked_count, :integer, default: 0
   attribute :star_count, :integer, default: 0
