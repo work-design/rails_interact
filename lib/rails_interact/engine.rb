@@ -1,3 +1,5 @@
+require 'closure_tree'
+require 'rails_com'
 module RailsInteract
   class Engine < ::Rails::Engine
 

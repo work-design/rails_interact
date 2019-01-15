@@ -6,7 +6,7 @@ json.extract! comment,
               :score,
               :star_count,
               :created_at
-if comment.commenter
+if comment.user
   json.commenter comment.user, :id, :name, :avatar_url
 end
 if current_user

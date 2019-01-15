@@ -1,6 +1,6 @@
 class Interact::Api::CommentsController < Interact::Api::BaseController
   before_action :set_comment, only: [:show, :update, :destroy]
-  skip_before_action :require_login, only: [:index]
+  before_action :require_login, only: [:create]
 
   def index
     q_params = {}.with_indifferent_access
@@ -45,6 +45,6 @@ class Interact::Api::CommentsController < Interact::Api::BaseController
       :star_count,
     ).merge(
       params.permit(:commentable_type, :commentable_id)
-    ).merge(commenter_id: current_user.id)
+    ).merge(user_id: current_user.id)
   end
 end

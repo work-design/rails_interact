@@ -14,6 +14,14 @@ class RailsInteractInit < ActiveRecord::Migration[5.2]
       t.timestamps
     end
 
+    create_table :comment_hierarchies, id: false do |t|
+      t.integer :ancestor_id, null: false
+      t.integer :descendant_id, null: false
+      t.integer :generations, null: false
+      t.index [:ancestor_id, :descendant_id, :generations], unique: true, name: 'comment_anc_desc_idx'
+      t.index [:descendant_id], name: 'comment_desc_idx'
+    end
+
     create_table :attitudes do |t|
       t.references :attitudinal, polymorphic: true
       t.references :user

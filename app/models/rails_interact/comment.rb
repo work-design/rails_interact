@@ -1,8 +1,12 @@
 class Comment < ApplicationRecord
   include RailsInteractLike
+
+  attribute :title, :string
+  attribute :content, :string
   attribute :score, :float, default: 0
   attribute :liked_count, :integer, default: 0
   attribute :star_count, :integer, default: 0
+
   belongs_to :user
   belongs_to :commentable, polymorphic: true
   has_many :attitudes, as: :attitudinal, dependent: :delete_all
