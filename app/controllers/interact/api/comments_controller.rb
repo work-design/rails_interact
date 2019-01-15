@@ -1,6 +1,6 @@
 class Interact::Api::CommentsController < Interact::Api::BaseController
   before_action :set_comment, only: [:show, :update, :destroy]
-  skip_before_action :require_login_from_token, only: [:index]
+  skip_before_action :require_login, only: [:index]
 
   def index
     q_params = {}.with_indifferent_access

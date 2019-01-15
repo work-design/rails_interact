@@ -7,7 +7,7 @@ json.extract! comment,
               :star_count,
               :created_at
 if comment.commenter
-  json.commenter comment.commenter, :id, :name, :avatar_url
+  json.commenter comment.user, :id, :name, :avatar_url
 end
 if current_user
   json.liked comment.liked?(current_user.id)

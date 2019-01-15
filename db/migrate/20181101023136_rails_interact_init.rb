@@ -3,7 +3,7 @@ class RailsInteractInit < ActiveRecord::Migration[5.2]
 
     create_table :comments do |t|
       t.references :commentable, polymorphic: true
-      t.references :commenter
+      t.references :user
       t.references :parent
       t.string :title
       t.text :content

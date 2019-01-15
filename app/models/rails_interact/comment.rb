@@ -3,8 +3,8 @@ class Comment < ApplicationRecord
   attribute :score, :float, default: 0
   attribute :liked_count, :integer, default: 0
   attribute :star_count, :integer, default: 0
+  belongs_to :user
   belongs_to :commentable, polymorphic: true
-  belongs_to :commenter, class_name: 'User'
   has_many :attitudes, as: :attitudinal, dependent: :delete_all
 
   default_scope -> { order(id: :desc) }
