@@ -1,10 +1,5 @@
 <div class="ui top attached borderless menu">
   <div class="header item">Admin Attitudes</div>
-  <div class="right menu">
-    <div class="item">
-      <%= link_to 'New Admin Attitude', new_admin_attitude_path, class: 'ui teal button' %>
-    </div>
-  </div>
 </div>
 
 <div class="ui attached segment">
@@ -15,7 +10,7 @@
   <thead>
     <tr>
       <th><%= Attitude.human_attribute_name(:id) %></th>
-      <th><%= Attitude.human_attribute_name(:user_id) %></th>
+      <th><%= Attitude.human_attribute_name(:user) %></th>
       <th><%= Attitude.human_attribute_name(:opinion) %></th>
       <th><%= Attitude.human_attribute_name(:attitudinal_type) %></th>
       <th><%= Attitude.human_attribute_name(:attitudinal_id) %></th>
@@ -26,7 +21,9 @@
   <% @attitudes.each do |attitude| %>
     <tr>
       <td><%= attitude.id %></td>
-      <td><%= attitude.user_id %></td>
+      <td>
+        <%= link_to attitude.user.name, admin_user_path(attitude.user_id) %>
+      </td>
       <td><%= attitude.opinion %></td>
       <td><%= attitude.attitudinal_type %></td>
       <td><%= attitude.attitudinal_id %></td>

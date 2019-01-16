@@ -13,6 +13,7 @@
       <th><%= Comment.human_attribute_name(:title) %></th>
       <th><%= Comment.human_attribute_name(:content) %></th>
       <th><%= Comment.human_attribute_name(:state) %></th>
+      <th><%= Comment.human_attribute_name(:user) %></th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -23,6 +24,9 @@
       <td><%= comment.title %></td>
       <td><%= comment.content %></td>
       <td><%= comment.state %></td>
+      <td>
+        <%= link_to comment.user.name, admin_user_path(comment.user_id) %>
+      </td>
       <td class="ui labels">
         <%= link_to admin_comment_path(comment), data: { tooltip: t('.show') }, class: 'ui blue mini icon button' do %>
           <i class="location arrow icon"></i>

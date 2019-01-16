@@ -1,10 +1,5 @@
 <div class="ui top attached borderless menu">
   <div class="header item">Admin Stars</div>
-  <div class="right menu">
-    <div class="item">
-      <%= link_to 'New Admin Star', new_admin_star_path, class: 'ui teal button' %>
-    </div>
-  </div>
 </div>
 
 <div class="ui attached segment">
@@ -15,7 +10,7 @@
   <thead>
     <tr>
       <th><%= Star.human_attribute_name(:id) %></th>
-      <th><%= Star.human_attribute_name(:user_id) %></th>
+      <th><%= Star.human_attribute_name(:user) %></th>
       <th><%= Star.human_attribute_name(:starred_type) %></th>
       <th><%= Star.human_attribute_name(:starred_id) %></th>
       <th>Actions</th>
@@ -25,7 +20,9 @@
   <% @stars.each do |star| %>
     <tr>
       <td><%= star.id %></td>
-      <td><%= star.user_id %></td>
+      <td>
+        <%= link_to star.user.name, admin_user_path(star.user_id) %>
+      </td>
       <td><%= star.starred_type %></td>
       <td><%= star.starred_id %></td>
       <td class="ui labels">
