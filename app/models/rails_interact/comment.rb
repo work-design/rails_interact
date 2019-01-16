@@ -28,4 +28,8 @@ class Comment < ApplicationRecord
     self.score = self.star_count.to_i * 2
   end
 
+  def self.commentable_types
+    self.unscoped.distinct(:commentable_type).pluck(:commentable_type)
+  end
+
 end

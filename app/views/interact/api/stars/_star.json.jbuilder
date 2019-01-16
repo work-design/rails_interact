@@ -3,4 +3,6 @@ json.extract! star,
               :starred_type,
               :starred_id,
               :created_at
-json.starred star.starred, :id, :title
+if star.starred
+  json.starred star.starred, :id, :title
+end

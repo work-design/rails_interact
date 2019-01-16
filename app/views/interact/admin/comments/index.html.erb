@@ -1,14 +1,9 @@
 <div class="ui top attached borderless menu">
   <div class="header item">Comments</div>
-  <div class="right menu">
-    <div class="item">
-      <%= link_to 'New Comment', new_comment_path, class: 'ui teal button' %>
-    </div>
-  </div>
 </div>
 
 <div class="ui attached segment">
-  <%= render 'search_form' %>
+  <%= render 'filter' %>
 </div>
 
 <table class="ui bottom attached table">
@@ -29,13 +24,13 @@
       <td><%= comment.content %></td>
       <td><%= comment.state %></td>
       <td class="ui labels">
-        <%= link_to comment_path(comment), data: { tooltip: t('.show') }, class: 'ui blue mini icon button' do %>
+        <%= link_to admin_comment_path(comment), data: { tooltip: t('.show') }, class: 'ui blue mini icon button' do %>
           <i class="location arrow icon"></i>
         <% end %>
-        <%= link_to edit_comment_path(comment), data: { tooltip: t('.edit') }, class: 'ui pink mini icon button' do %>
+        <%= link_to edit_admin_comment_path(comment), data: { tooltip: t('.edit') }, class: 'ui pink mini icon button' do %>
           <i class="pencil alternate icon"></i>
         <% end %>
-        <%= link_to comment_path(comment), method: :delete, data: { tooltip: t('.destroy'), confirm: 'Are you sure?' }, class: 'ui red mini icon button' do %>
+        <%= link_to admin_comment_path(comment), method: :delete, data: { tooltip: t('.destroy'), confirm: 'Are you sure?' }, class: 'ui red mini icon button' do %>
           <i class="times icon"></i>
         <% end %>
       </td>
