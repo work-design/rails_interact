@@ -1,8 +1,8 @@
 <ul>
-  <%= image_tag comment.commenter.avatar, class: 'ui avatar image' %>
+  <%= image_tag comment.user.avatar, class: 'ui avatar image' %>
   <div class="messageText">
     <div>
-      <span class="userName"><%= comment.commenter.name %></span>
+      <span class="userName"><%= comment.user.name %></span>
       <div class="ui rating disableRating" data-rating="<%= comment.score %>" data-max-rating="5"></div>
       <span class="date"><%= comment.created_at.to_s(:date) %></span>
     </div>
