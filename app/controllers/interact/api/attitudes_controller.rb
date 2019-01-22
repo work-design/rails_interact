@@ -78,7 +78,7 @@ class Interact::Api::AttitudesController < Interact::Api::BaseController
 
   def set_attitude
     @attitude = Attitude.find_or_initialize_by(
-      attitudinal_type: params[:attitudinal_type],
+      attitudinal_type: params[:attitudinal_type].classify,
       attitudinal_id: params[:attitudinal_id],
       user_id: current_user.id
     )

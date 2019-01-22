@@ -36,9 +36,10 @@ class Interact::Api::AbusesController < Interact::Api::BaseController
   private
   def abuse_params
     params.permit(
-      :abusement_type,
       :abusement_id,
       :content
+    ).merge(
+      abusement_type: params[:abusement_type].classify
     )
   end
 end

@@ -34,7 +34,7 @@ class Interact::Api::StarsController < Interact::Api::BaseController
   private
   def set_star
     @star = Star.find_or_initialize_by(
-      starred_type: params[:starred_type],
+      starred_type: params[:starred_type].classify,
       starred_id: params[:starred_id],
       user_id: current_user.id
     )

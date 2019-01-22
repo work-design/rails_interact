@@ -35,5 +35,12 @@ class RailsInteractInit < ActiveRecord::Migration[5.2]
       t.timestamps
     end
 
+    create_table :abuses do |t|
+      t.references :abusement, polymorphic: true
+      t.references :user
+      t.string :note
+      t.timestamps
+    end
+
   end
 end

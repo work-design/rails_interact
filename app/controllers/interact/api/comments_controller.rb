@@ -44,7 +44,8 @@ class Interact::Api::CommentsController < Interact::Api::BaseController
       :content,
       :star_count,
     ).merge(
-      params.permit(:commentable_type, :commentable_id)
+      commentable_type: params[:commentable_type].classify,
+      commentable_id: params[:commentable_id]
     ).merge(user_id: current_user.id)
   end
 end
