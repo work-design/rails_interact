@@ -15,7 +15,7 @@ class Interact::Api::AbusesController < Interact::Api::BaseController
     @abuse = Abuse.new(abuse_params)
 
     if @abuse.save
-      render json: @abuse, status: :created
+      render json: @abuse.as_json(root: true), status: :created
     else
       render json: @abuse.errors, status: :unprocessable_entity
     end
@@ -37,7 +37,7 @@ class Interact::Api::AbusesController < Interact::Api::BaseController
   def abuse_params
     params.permit(
       :abusement_id,
-      :content
+      :note
     ).merge(
       abusement_type: params[:abusement_type].classify
     )

@@ -16,9 +16,11 @@ Rails.application.routes.draw do
     scope ':commentable_type/:commentable_id' do
       resources :comments, only: [:index, :show, :create, :update, :destroy]
     end
+    resources :comments, only: [:index, :show, :create, :update, :destroy]
     scope ':abusement_type/:abusement_id' do
       resources :abuses, only: [:create, :destroy]
     end
+    resources :abuses, only: [:create, :destroy]
     scope ':attitudinal_type/:attitudinal_id' do
       resources :attitudes, only: [:index, :show, :create, :update, :destroy] do
         post :like, on: :collection
@@ -27,6 +29,13 @@ Rails.application.routes.draw do
         post :dislike_toggle, on: :collection
         post :cancel, on: :collection
       end
+    end
+    resources :attitudes, only: [:index, :show, :create, :update, :destroy] do
+      post :like, on: :collection
+      post :like_toggle, on: :collection
+      post :dislike, on: :collection
+      post :dislike_toggle, on: :collection
+      post :cancel, on: :collection
     end
     resources :stars, only: [:index]
     scope ':starred_type/:starred_id' do
