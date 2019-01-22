@@ -1,5 +1,5 @@
 class Interact::Api::AttitudesController < Interact::Api::BaseController
-  before_action :set_attitude, only: [:show, :update, :destroy]
+  before_action :set_attitude, only: [:like, :like_toggle, :dislike, :dislike_toggle, :cancel]
   before_action :require_login, only: [:like, :dislike, :cancel]
 
   def index
@@ -8,16 +8,7 @@ class Interact::Api::AttitudesController < Interact::Api::BaseController
     render json: @attitudes
   end
 
-  def show
-    render json: @attitude
-  end
-
   def like
-    @attitude = Attitude.find_or_initialize_by(
-      attitudinal_type: params[:attitudinal_type],
-      attitudinal_id: params[:attitudinal_id],
-      user_id: current_user.id
-    )
     @attitude.opinion = 'liked'
 
     if @attitude.save
@@ -27,12 +18,24 @@ class Interact::Api::AttitudesController < Interact::Api::BaseController
     end
   end
 
+  def like_toggle
+    @attitude.opinion = 'liked'
+
+    if @attitude.new_record? && @attitude.save
+      render json: @attitude.as_json(root: true), status: :created
+    elsif @attitude.persisted?
+      if @attitude.opinion == 'liked'
+        @attitude.opinion = 'like_canceled'
+      else
+        @attitude.opinion = 'liked'
+      end
+      render json: @attitude.as_json(root: true), status: :ok
+    else
+      process_errors(@attitude)
+    end
+  end
+
   def dislike
-    @attitude = Attitude.find_or_initialize_by(
-      attitudinal_type: params[:attitudinal_type],
-      attitudinal_id: params[:attitudinal_id],
-      user_id: current_user.id
-    )
     @attitude.opinion = 'disliked'
 
     if @attitude.save
@@ -42,12 +45,24 @@ class Interact::Api::AttitudesController < Interact::Api::BaseController
     end
   end
 
+  def dislike_toggle
+    @attitude.opinion = 'disliked'
+
+    if @attitude.new_record? && @attitude.save
+      render json: @attitude.as_json(root: true), status: :created
+    elsif @attitude.persisted?
+      if @attitude.opinion == 'disliked'
+        @attitude.opinion = 'dislike_canceled'
+      else
+        @attitude.opinion = 'disliked'
+      end
+      render json: @attitude.as_json(root: true), status: :ok
+    else
+      process_errors(@attitude)
+    end
+  end
+
   def cancel
-    @attitude = Attitude.find_or_initialize_by(
-      attitudinal_type: params[:attitudinal_type],
-      attitudinal_id: params[:attitudinal_id],
-      user_id: current_user.id
-    )
     if @attitude.opinion == 'liked'
       @attitude.opinion = 'like_canceled'
     elsif @attitude.opinion == 'disliked'
@@ -61,24 +76,12 @@ class Interact::Api::AttitudesController < Interact::Api::BaseController
     end
   end
 
-  def update
-    if @attitude.update(attitude_params)
-      render json: @attitude
-    else
-      render json: @attitude.errors, status: :unprocessable_entity
-    end
-  end
-
-  def destroy
-    @attitude.destroy
-  end
-
-  private
   def set_attitude
-    @attitude = Attitude.find(params[:id])
+    @attitude = Attitude.find_or_initialize_by(
+      attitudinal_type: params[:attitudinal_type],
+      attitudinal_id: params[:attitudinal_id],
+      user_id: current_user.id
+    )
   end
 
-  def attitude_params
-    params.fetch(:attitude, {})
-  end
 end
