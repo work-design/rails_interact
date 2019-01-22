@@ -1,4 +1,4 @@
-class Admin::AbusesController < Admin::BaseController
+class Interact::Admin::AbusesController < Interact::Admin::BaseController
   before_action :set_abuse, only: [:show, :edit, :update, :destroy]
 
   def index
