@@ -48,7 +48,7 @@ class Interact::Admin::AbusesController < Interact::Admin::BaseController
       :abusement,
       :state,
       :note,
-      :user,
+      :user
     )
   end
 
