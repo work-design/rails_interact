@@ -12,8 +12,10 @@
       <th><%= Attitude.human_attribute_name(:id) %></th>
       <th><%= Attitude.human_attribute_name(:user) %></th>
       <th><%= Attitude.human_attribute_name(:opinion) %></th>
-      <th><%= Attitude.human_attribute_name(:attitudinal_type) %></th>
-      <th><%= Attitude.human_attribute_name(:attitudinal_id) %></th>
+      <th>
+        <p><%= Attitude.human_attribute_name(:attitudinal_type) %></p>
+        <p><%= Attitude.human_attribute_name(:attitudinal_id) %></p>
+      </th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -25,8 +27,10 @@
         <%= link_to attitude.user.name, admin_user_path(attitude.user_id) %>
       </td>
       <td><%= attitude.opinion %></td>
-      <td><%= attitude.attitudinal_type %></td>
-      <td><%= attitude.attitudinal_id %></td>
+      <td>
+        <p><%= attitude.attitudinal_type %></p>
+        <p><%= attitude.attitudinal_id %></p>
+      </td>
       <td class="ui labels">
         <%= link_to admin_attitude_path(attitude), data: { tooltip: t('.show') }, class: 'ui blue mini icon button' do %>
           <i class="location arrow icon"></i>

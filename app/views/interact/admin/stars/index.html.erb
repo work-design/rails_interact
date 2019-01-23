@@ -11,8 +11,10 @@
     <tr>
       <th><%= Star.human_attribute_name(:id) %></th>
       <th><%= Star.human_attribute_name(:user) %></th>
-      <th><%= Star.human_attribute_name(:starred_type) %></th>
-      <th><%= Star.human_attribute_name(:starred_id) %></th>
+      <th>
+        <p><%= Star.human_attribute_name(:starred_type) %></p>
+        <p><%= Star.human_attribute_name(:starred_id) %></p>
+      </th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -23,8 +25,10 @@
       <td>
         <%= link_to star.user.name, admin_user_path(star.user_id) %>
       </td>
-      <td><%= star.starred_type %></td>
-      <td><%= star.starred_id %></td>
+      <td>
+        <p><%= star.starred_type %></p>
+        <p><%= star.starred_id %></p>
+      </td>
       <td class="ui labels">
         <%= link_to admin_star_path(star), data: { tooltip: t('.show') }, class: 'ui blue mini icon button' do %>
           <i class="location arrow icon"></i>

@@ -13,7 +13,10 @@
   <thead>
     <tr>
       <th><%= Abuse.human_attribute_name(:id) %></th>
-      <th><%= Abuse.human_attribute_name(:abusement) %></th>
+      <th>
+        <p><%= Abuse.human_attribute_name(:abusement_type) %></p>
+        <p><%= Abuse.human_attribute_name(:abusement_id) %></p>
+      </th>
       <th><%= Abuse.human_attribute_name(:state) %></th>
       <th><%= Abuse.human_attribute_name(:note) %></th>
       <th><%= Abuse.human_attribute_name(:user) %></th>
@@ -24,18 +27,21 @@
   <% @abuses.each do |abuse| %>
     <tr>
       <td><%= abuse.id %></td>
-      <td><%= abuse.abusement %></td>
+      <td>
+        <p><%= abuse.abusement_type %></p>
+        <p><%= abuse.abusement_id %></p>
+      </td>
       <td><%= abuse.state %></td>
       <td><%= abuse.note %></td>
       <td><%= abuse.user %></td>
       <td class="ui labels">
-        <%= link_to admin_abus_path(abuse), data: { tooltip: t('.show') }, class: 'ui blue mini icon button' do %>
+        <%= link_to admin_abuses_path(abuse), data: { tooltip: t('.show') }, class: 'ui blue mini icon button' do %>
           <i class="location arrow icon"></i>
         <% end %>
-        <%= link_to edit_admin_abus_path(abuse), data: { tooltip: t('.edit') }, class: 'ui pink mini icon button' do %>
+        <%= link_to edit_admin_abuses_path(abuse), data: { tooltip: t('.edit') }, class: 'ui pink mini icon button' do %>
           <i class="pencil alternate icon"></i>
         <% end %>
-        <%= link_to admin_abus_path(abuse), method: :delete, data: { tooltip: t('.destroy'), confirm: 'Are you sure?' }, class: 'ui red mini icon button' do %>
+        <%= link_to admin_abuse_path(abuse), method: :delete, data: { tooltip: t('.destroy'), confirm: 'Are you sure?' }, class: 'ui red mini icon button' do %>
           <i class="times icon"></i>
         <% end %>
       </td>

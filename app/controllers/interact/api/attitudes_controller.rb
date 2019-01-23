@@ -1,5 +1,5 @@
 class Interact::Api::AttitudesController < Interact::Api::BaseController
-  before_action :set_attitude, only: [:like, :like_toggle, :dislike, :dislike_toggle, :cancel]
+  before_action :set_attitude, only: [:create, :like, :dislike, :cancel]
   before_action :require_login, only: [:like, :dislike, :cancel]
 
   def index
@@ -9,7 +9,7 @@ class Interact::Api::AttitudesController < Interact::Api::BaseController
   end
 
   def create
-    @attitude.opinion = attitude_params[:opinion]
+    @attitude.opinion = params[:opinion] || attitude_params[:opinion]
 
     if @attitude.save
       render json: @attitude.as_json(root: true), status: :ok

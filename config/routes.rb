@@ -24,17 +24,13 @@ Rails.application.routes.draw do
     scope ':attitudinal_type/:attitudinal_id' do
       resources :attitudes, only: [:index, :show, :create, :update, :destroy] do
         post :like, on: :collection
-        post :like_toggle, on: :collection
         post :dislike, on: :collection
-        post :dislike_toggle, on: :collection
         post :cancel, on: :collection
       end
     end
     resources :attitudes, only: [:index, :show, :create, :update, :destroy] do
       post :like, on: :collection
-      post :like_toggle, on: :collection
       post :dislike, on: :collection
-      post :dislike_toggle, on: :collection
       post :cancel, on: :collection
     end
     resources :stars, only: [:index]
