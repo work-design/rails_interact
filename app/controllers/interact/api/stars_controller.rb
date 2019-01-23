@@ -9,7 +9,7 @@ class Interact::Api::StarsController < Interact::Api::BaseController
 
   def create
     if @star.save
-      render json: @star, status: :created
+      render json: @star.as_json(root: true), status: :created
     else
       render json: @star.errors, status: :unprocessable_entity
     end
