@@ -18,7 +18,7 @@ class Interact::Api::StarsController < Interact::Api::BaseController
 
   def destroy
     if @star.persisted? && @star.destroy
-      head :no_content
+      render json: {}, status: :no_content
     end
   end
 
@@ -26,7 +26,7 @@ class Interact::Api::StarsController < Interact::Api::BaseController
     if @star.new_record? && @star.save
       render json: @star, status: :created
     elsif @star.persisted? && @star.destroy
-      head :no_content
+      render json: {}, status: :no_content
     else
       render json: @star.errors, status: :unprocessable_entity
     end
