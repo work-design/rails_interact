@@ -1,5 +1,5 @@
 # RailsInteract
-Short description and motivation.
+Utils for comment, like/dislike, report abuse;
 
 ## Usage
 How to use my plugin.
