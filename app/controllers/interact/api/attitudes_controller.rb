@@ -1,6 +1,6 @@
 class Interact::Api::AttitudesController < Interact::Api::BaseController
   before_action :set_attitude, only: [:create, :like, :dislike, :cancel]
-  before_action :require_login, only: [:like, :dislike, :cancel]
+  before_action :require_login, only: [:create, :like, :dislike, :cancel]
 
   def index
     @attitudes = Attitude.page(params[:page])
