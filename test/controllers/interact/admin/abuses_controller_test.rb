@@ -1,8 +1,8 @@
 require 'test_helper'
 
-class Admin::AbusesControllerTest < ActionDispatch::IntegrationTest
+class Interact::Admin::AbusesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @admin_abus = admin_abuses(:one)
+    @abuse = admin_abuses(:one)
   end
 
   test "should get index" do

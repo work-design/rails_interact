@@ -16,11 +16,6 @@ And then execute:
 $ bundle
 ```
 
-Or install it yourself as:
-```bash
-$ gem install rails_interact
-```
-
 ## Contributing
 Contribution directions go here.
 
