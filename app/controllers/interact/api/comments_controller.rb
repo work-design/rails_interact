@@ -48,4 +48,13 @@ class Interact::Api::CommentsController < Interact::Api::BaseController
       commentable_id: params[:commentable_id]
     ).merge(user_id: current_user.id)
   end
+
+  def growth_entity_type
+    params[:commentable_type]
+  end
+
+  def growth_entity_id
+    params[:commentable_id]
+  end
+
 end

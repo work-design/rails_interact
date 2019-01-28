@@ -67,4 +67,12 @@ class Interact::Api::AttitudesController < Interact::Api::BaseController
     )
   end
 
+  def growth_entity_type
+    params[:attitudinal_type]
+  end
+
+  def growth_entity_id
+    params[:attitudinal_id]
+  end
+
 end
