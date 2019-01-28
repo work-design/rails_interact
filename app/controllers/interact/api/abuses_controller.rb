@@ -38,8 +38,9 @@ class Interact::Api::AbusesController < Interact::Api::BaseController
     params.fetch(:abuse, {}).permit(
       :note
     ).merge(
-      abusement_id: abusement_id,
-      abusement_type: params[:abusement_type].classify
+      abusement_id: params[:abusement_id],
+      abusement_type: params[:abusement_type].classify,
+      user_id: current_user&.id
     )
   end
 end
