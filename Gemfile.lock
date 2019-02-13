@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 41f5c557ea799bd9ba033208358e601d3983472d
+  revision: ffae1713cac75ba4fd13ebc081f6804f246aa87b
   branch: master
   specs:
     rails_com (1.2.9)

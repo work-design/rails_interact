@@ -1,6 +1,6 @@
 class Interact::Api::StarsController < Interact::Api::BaseController
-  before_action :set_star, only: [:create, :toggle, :destroy]
   before_action :require_login, only: [:create, :toggle, :destroy]
+  before_action :set_star, only: [:create, :toggle, :destroy]
 
   def index
     q_params = { starred_type: 'Post' }.with_indifferent_access
