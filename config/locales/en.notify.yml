@@ -1,0 +1,11 @@
+en:
+  activerecord:
+    notify:
+      attitude:
+        default:
+          title: '@%{user_name}'
+          body: 赞了你的评论
+      comment:
+        default:
+          title: '@%{user_name}评论了你'
+          body: '%{content}'
