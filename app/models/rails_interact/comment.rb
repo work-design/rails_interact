@@ -15,6 +15,13 @@ class Comment < ApplicationRecord
   has_closure_tree
   before_validation :sync_commentable, if: -> { commentable_type.blank? && commentable_id.blank? }
   before_save :compute_score, if: -> { star_count_changed? }
+  after_commit :sync_to_notification, on: [:create]
+
+  delegate :name, to: :user, prefix: true
+
+  acts_as_notify :default,
+                 only: [:content],
+                 methods: [:user_name]
 
   def sync_commentable
     if parent
@@ -29,6 +36,14 @@ class Comment < ApplicationRecord
 
   def self.commentable_types
     self.unscoped.distinct(:commentable_type).pluck(:commentable_type)
+  end
+
+  def sync_to_notification
+    to_notification(
+      receiver: self.commentable.user,
+      sender: self.user,
+      verbose: true
+    )
   end
 
 end

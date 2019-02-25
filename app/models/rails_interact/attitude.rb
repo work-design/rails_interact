@@ -2,6 +2,9 @@ class Attitude < ApplicationRecord
   belongs_to :user
   belongs_to :attitudinal, polymorphic: true
   after_save :update_attitudinal_counter
+  after_commit :sync_to_notification, on: [:create, :update]
+
+  delegate :name, to: :user, prefix: true
 
   enum opinion: {
     liked: 'liked',
@@ -9,6 +12,9 @@ class Attitude < ApplicationRecord
     like_canceled: 'like_canceled',
     dislike_canceled: 'dislike_canceled'
   }
+  acts_as_notify :default,
+                 only: [:opinion],
+                 methods: [:user_name]
 
   def update_attitudinal_counter
     if attitudinal_id && self.saved_change_to_opinion?
@@ -38,6 +44,14 @@ class Attitude < ApplicationRecord
         self.attitudinal.class.decrement_counter('disliked_count', attitudinal_id_before_last_save)
       end
     end
+  end
+
+  def sync_to_notification
+    to_notification(
+      receiver: self.attitudinal.user,
+      sender: self.user,
+      verbose: true
+    )
   end
 
 end
