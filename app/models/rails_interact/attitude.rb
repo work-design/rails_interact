@@ -13,8 +13,8 @@ class Attitude < ApplicationRecord
     dislike_canceled: 'dislike_canceled'
   }
   acts_as_notify :default,
-                 only: [:opinion],
-                 methods: [:user_name]
+                 only: [:opinion, :attitudinal_type],
+                 methods: [:user_name, :attitudinal_type_i18n]
 
   def update_attitudinal_counter
     if attitudinal_id && self.saved_change_to_opinion?
@@ -50,6 +50,7 @@ class Attitude < ApplicationRecord
     to_notification(
       receiver: self.attitudinal.user,
       sender: self.user,
+      linked: self.attitudinal,
       verbose: true
     )
   end

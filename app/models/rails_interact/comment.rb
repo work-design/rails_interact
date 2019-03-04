@@ -42,6 +42,7 @@ class Comment < ApplicationRecord
     to_notification(
       receiver: self.commentable.user,
       sender: self.user,
+      linked: self.commentable,
       verbose: true
     )
   end

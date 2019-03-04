@@ -54,7 +54,7 @@ class Interact::My::CommentsController < Interact::My::BaseController
       :score
     ).merge(
       params.permit(:commentable_type, :commentable_id)
-    ).merge(commenter_id: current_user.id)
+    ).merge(user_id: current_user.id)
   end
 
 end
