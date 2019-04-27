@@ -1,4 +1,4 @@
-module RailsInteractComment
+module RailsInteract::Commentable
   extend ActiveSupport::Concern
   included do
     attribute :comments_count, :integer, default: 0

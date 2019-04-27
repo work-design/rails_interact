@@ -1,4 +1,4 @@
-module RailsInteractUser
+module RailsInteract::User
   extend ActiveSupport::Concern
   
   included do

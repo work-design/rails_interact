@@ -1,28 +1,31 @@
-class Comment < ApplicationRecord
-  include RailsInteractLike
-
-  attribute :title, :string
-  attribute :content, :string
-  attribute :score, :float, default: 0
-  attribute :liked_count, :integer, default: 0
-  attribute :star_count, :integer, default: 0
-
-  belongs_to :user
-  belongs_to :commentable, polymorphic: true, counter_cache: true
-
-  default_scope -> { order(id: :desc) }
-
-  has_closure_tree
-  before_validation :sync_commentable, if: -> { commentable_type.blank? && commentable_id.blank? }
-  before_save :compute_score, if: -> { star_count_changed? }
-  after_commit :sync_to_notification, on: [:create]
-
-  delegate :name, to: :user, prefix: true
-
-  acts_as_notify :default,
-                 only: [:content],
-                 methods: [:user_name]
-
+module RailsInteract::Comment
+  extend ActiveSupport::Concern
+  included do
+    include RailsInteractLike
+  
+    attribute :title, :string
+    attribute :content, :string
+    attribute :score, :float, default: 0
+    attribute :liked_count, :integer, default: 0
+    attribute :star_count, :integer, default: 0
+  
+    belongs_to :user
+    belongs_to :commentable, polymorphic: true, counter_cache: true
+  
+    default_scope -> { order(id: :desc) }
+  
+    has_closure_tree
+    before_validation :sync_commentable, if: -> { commentable_type.blank? && commentable_id.blank? }
+    before_save :compute_score, if: -> { star_count_changed? }
+    after_commit :sync_to_notification, on: [:create]
+  
+    delegate :name, to: :user, prefix: true
+  
+    acts_as_notify :default,
+                   only: [:content],
+                   methods: [:user_name]
+  end
+  
   def sync_commentable
     if parent
       self.commentable_type = parent.commentable_type

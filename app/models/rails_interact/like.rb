@@ -1,4 +1,4 @@
-module RailsInteractLike
+module RailsInteract::Like
   extend ActiveSupport::Concern
   included do
     attribute :liked_count, :integer, default: 0
