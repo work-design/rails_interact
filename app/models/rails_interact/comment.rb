@@ -1,8 +1,6 @@
 module RailsInteract::Comment
   extend ActiveSupport::Concern
   included do
-    include RailsInteract::Like
-  
     attribute :title, :string
     attribute :content, :string
     attribute :score, :float, default: 0
