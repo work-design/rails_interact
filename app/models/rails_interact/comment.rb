@@ -1,7 +1,7 @@
 module RailsInteract::Comment
   extend ActiveSupport::Concern
   included do
-    include RailsInteractLike
+    include RailsInteract::Like
   
     attribute :title, :string
     attribute :content, :string
