@@ -6,14 +6,14 @@ Gem::Specification.new do |s|
   s.version = RailsInteract::VERSION
   s.authors = ['qinmingyuan']
   s.email = ['mingyuan0715@foxmail.com']
-  s.homepage = ''
+  s.homepage = 'https://github.com/work-design/rails_interact'
   s.summary = 'Summary of RailsInteract.'
   s.description = 'Description of RailsInteract.'
-  s.license = 'MIT'
+  s.license = 'LGPL-3.0'
 
   s.files = Dir[
     '{app,config,db,lib}/**/*',
-    'MIT-LICENSE',
+    'LICENSE',
     'Rakefile',
     'README.md'
   ]
