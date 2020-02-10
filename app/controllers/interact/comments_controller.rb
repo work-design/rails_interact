@@ -1,5 +1,4 @@
-class Interact::Api::CommentsController < Interact::Api::BaseController
-  before_action :require_login, only: [:create]
+class Interact::CommentsController < Interact::BaseController
   before_action :set_comment, only: [:show, :update, :destroy]
 
   def index

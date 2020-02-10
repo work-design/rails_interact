@@ -5,10 +5,6 @@ class Interact::My::AttitudesController < Interact::My::BaseController
     @attitudes = Attitude.page(params[:page])
   end
 
-  def new
-    @attitude = Attitude.new
-  end
-
   def like
     @attitude = Attitude.find_or_initialize_by(
       attitudinal_type: params[:attitudinal_type],

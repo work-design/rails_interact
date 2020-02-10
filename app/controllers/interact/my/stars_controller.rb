@@ -1,9 +1,8 @@
-class Interact::Api::StarsController < Interact::Api::BaseController
-  before_action :require_login, only: [:create, :toggle, :destroy]
+class Interact::My::StarsController < Interact::My::BaseController
   before_action :set_star, only: [:create, :toggle, :destroy]
 
   def index
-    q_params = { starred_type: 'Post' }.with_indifferent_access
+    q_params = {}
     q_params.merge! params.permit(:starred_type)
     @stars = Star.default_where(q_params).page(params[:page]).per(params[:per])
   end

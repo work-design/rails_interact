@@ -1,15 +1,6 @@
 GIT
-  remote: https://github.com/thoughtbot/factory_bot_rails.git
-  revision: 39ada50d89140935e24c63d1b73bf082243d07ef
-  specs:
-    factory_bot_rails (5.1.1)
-      factory_bot (~> 5.1.0)
-      railties (>= 4.2.0)
-
-GIT
   remote: https://github.com/work-design/rails_com.git
   revision: 0bdfbb817a99189d3b061587ce392e6b47a74d94
-  branch: master
   specs:
     rails_com (1.2.9)
       default_where (~> 2.2)
@@ -94,6 +85,9 @@ GEM
     erubi (1.9.0)
     factory_bot (5.1.1)
       activesupport (>= 4.2.0)
+    factory_bot_rails (5.1.1)
+      factory_bot (~> 5.1.0)
+      railties (>= 4.2.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     http-2-next (0.2.1)
@@ -177,7 +171,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  factory_bot_rails!
+  factory_bot_rails
   rails_com!
   rails_interact!
   sqlite3

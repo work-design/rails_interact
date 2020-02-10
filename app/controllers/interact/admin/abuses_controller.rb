@@ -13,7 +13,7 @@ class Interact::Admin::AbusesController < Interact::Admin::BaseController
     @abuse = Abuse.new(abuse_params)
 
     if @abuse.save
-      redirect_to admin_abuses_url, notice: 'Abuse was successfully created.'
+      redirect_to admin_abuses_url
     else
       render :new
     end
@@ -27,7 +27,7 @@ class Interact::Admin::AbusesController < Interact::Admin::BaseController
 
   def update
     if @abuse.update(abuse_params)
-      redirect_to admin_abuses_url, notice: 'Abuse was successfully updated.'
+      redirect_to admin_abuses_url
     else
       render :edit
     end
@@ -35,7 +35,6 @@ class Interact::Admin::AbusesController < Interact::Admin::BaseController
 
   def destroy
     @abuse.destroy
-    redirect_to admin_abuses_url, notice: 'Abuse was successfully destroyed.'
   end
 
   private

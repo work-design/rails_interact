@@ -1,11 +1,14 @@
-class Interact::Api::AttitudesController < Interact::Api::BaseController
-  before_action :require_login, only: [:create, :like, :dislike, :cancel]
+class Interact::AttitudesController < Interact::BaseController
   before_action :set_attitude, only: [:create, :like, :dislike, :cancel]
 
   def index
     @attitudes = Attitude.page(params[:page])
 
     render json: @attitudes
+  end
+
+  def new
+    @attitude = Attitude.new
   end
 
   def create

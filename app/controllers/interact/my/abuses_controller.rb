@@ -1,4 +1,4 @@
-class Interact::Api::AbusesController < Interact::Api::BaseController
+class Interact::My::AbusesController < Interact::My::BaseController
   before_action :set_abuse, only: [:show, :update, :destroy]
 
   def index
