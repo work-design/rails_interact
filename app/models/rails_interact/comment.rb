@@ -15,7 +15,6 @@ module RailsInteract::Comment
 
     default_scope -> { order(id: :desc) }
 
-    has_closure_tree
     before_validation :sync_commentable, if: -> { commentable_type.blank? && commentable_id.blank? }
     before_save :compute_score, if: -> { star_count_changed? }
     after_commit :sync_to_notification, on: [:create]

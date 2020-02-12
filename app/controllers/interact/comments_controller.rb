@@ -2,7 +2,7 @@ class Interact::CommentsController < Interact::BaseController
   before_action :set_comment, only: [:show, :update, :destroy]
 
   def index
-    q_params = {}.with_indifferent_access
+    q_params = {}
     q_params.merge! params.permit(:commentable_type, :commentable_id)
     @comments = Comment.default_where(q_params).page(params[:page]).per(params[:per])
   end
