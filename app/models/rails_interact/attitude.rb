@@ -8,7 +8,7 @@ module RailsInteract::Attitude
     belongs_to :attitudinal, polymorphic: true
 
     after_save :update_attitudinal_counter
-    after_commit :sync_to_notification, on: [:create, :update]
+    after_save_commit :sync_to_notification, if: -> { saved_change_to_opinion? && liked? }
 
     delegate :name, to: :user, prefix: true
 
