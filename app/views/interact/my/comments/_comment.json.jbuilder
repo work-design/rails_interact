@@ -1,11 +1,13 @@
-json.extract! comment,
-              :id,
-              :title,
-              :content,
-              :state,
-              :score,
-              :star_count,
-              :created_at
+json.extract!(
+  comment,
+  :id,
+  :title,
+  :content,
+  :state,
+  :score,
+  :star_count,
+  :created_at
+)
 if comment.user
   json.commenter comment.user, :id, :name, :avatar_url
 end
