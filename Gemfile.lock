@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: b7a658759540c2215f3a599d8a73d94a3041ccb9
+  revision: 3e804660113ba183c48b95c27c88e2ef410f612e
   specs:
     rails_com (1.2.9)
       default_where (~> 2.2)
@@ -17,7 +17,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_notice.git
-  revision: 8c1121218ceed8c616c546a74a77fe6033d6e840
+  revision: bb312f1794308c67004ab9efb095c16f9938a1e8
   specs:
     rails_notice (1.0.2)
       rails_auth
@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_taxon.git
-  revision: 712c29da0fddd2cdf495b703d182af1cae65d7b7
+  revision: 049cec7721ba1bb3dbe539fe6b1636f716cc67de
   specs:
     rails_taxon (1.0.0)
       acts_as_list (>= 0.9, <= 1.0)
