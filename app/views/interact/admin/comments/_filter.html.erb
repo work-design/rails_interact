@@ -8,9 +8,9 @@
 <dl>
   <dt><%= Comment.human_attribute_name(:commentable_type) %>:</dt>
   <dd>
-    <%= link_to 'All', filter_params(except: [:commentable_type]), class: active_params(type: '', active_class: 'ui basic blue button', item_class: 'ui basic white button') %>
+    <%= link_to t('.all'), filter_params(except: [:commentable_type]), class: active_params(type: '', active_class: 'button is-info', item_class: 'button is-light') %>
     <% Comment.commentable_types.each do |value| %>
-      <%= link_to Comment.enum_i18n(:commentable_type, value), filter_params(commentable_type: value), class: active_params(commentable_type: value, active_class: 'ui basic blue button', item_class: 'ui basic white button') %>
+      <%= link_to Comment.enum_i18n(:commentable_type, value), filter_params(commentable_type: value), class: active_params(commentable_type: value, active_class: 'button is-info', item_class: 'button is-light') %>
     <% end %>
   </dd>
 </dl>
