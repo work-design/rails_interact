@@ -1,0 +1,11 @@
+<table class="as-search">
+  <tr>
+    <th><%= Comment.human_attribute_name(:commentable_type) %></th>
+    <td>
+      <%= link_to t('.all'), filter_params(except: [:commentable_type]), class: active_params(type: '', active_class: 'button is-info', item_class: 'button is-light') %>
+      <% Comment.commentable_types.each do |value| %>
+        <%= link_to Comment.enum_i18n(:commentable_type, value), filter_params(commentable_type: value), class: active_params(commentable_type: value, active_class: 'button is-info', item_class: 'button is-light') %>
+      <% end %>
+    </td>
+  </tr>
+</table>
