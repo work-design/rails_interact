@@ -1,9 +1,9 @@
 <div class="<%= active_helper(modules: 'interact/admin', active_class: 'menu ex-accordion is-active', item_class: 'menu ex-accordion') %>" data-controller="menu">
-  <%= content_tag :div, class: 'menu-list' do -%>
+  <%= content_tag :div, class: 'menu-list' do %>
     <%= link_to '收藏管理', admin_stars_path, class: active_helper(controllers: 'stars') %>
     <%= link_to '评论管理', admin_comments_path, class: active_helper(controllers: 'comments') %>
     <%= link_to '点赞管理', admin_attitudes_path, class: active_helper(controllers: 'attitudes') %>
-    <%= link_to '举报管理', admin_abuses_path, class: active_helper(controllers: 'abuses') %>
+    <%= link_to '举报管理', admin_abuses_path, class: active_helper(controllers: 'abuses') -%>
   <% end %>
   <a class="menu-label">
     <i class="fas fa-star"></i>
