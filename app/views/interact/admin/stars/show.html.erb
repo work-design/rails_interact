@@ -4,18 +4,18 @@
   <div class="active section">Show</div>
 </div>
 
-<table class="ui very basic large table">
+<table class="table is-hoverable is-fullwidth">
   <tbody>
     <tr>
-      <td class="right aligned"><%= Star.human_attribute_name(:user_id) %></td>
+      <td class="has-text-right"><%= Star.human_attribute_name(:user_id) %></td>
       <td><%= @star.user_id %></td>
     </tr>
     <tr>
-      <td class="right aligned"><%= Star.human_attribute_name(:starred_type) %></td>
+      <td class="has-text-right"><%= Star.human_attribute_name(:starred_type) %></td>
       <td><%= @star.starred_type %></td>
     </tr>
     <tr>
-      <td class="right aligned"><%= Star.human_attribute_name(:starred_id) %></td>
+      <td class="has-text-right"><%= Star.human_attribute_name(:starred_id) %></td>
       <td><%= @star.starred_id %></td>
     </tr>
   </tbody>

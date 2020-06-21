@@ -4,22 +4,22 @@
   <div class="active section">Show</div>
 </div>
 
-<table class="ui very basic large table">
+<table class="table is-hoverable is-fullwidth">
   <tbody>
     <tr>
-      <td class="right aligned"><%= Attitude.human_attribute_name(:user_id) %></td>
+      <td class="has-text-right"><%= Attitude.human_attribute_name(:user_id) %></td>
       <td><%= @attitude.user_id %></td>
     </tr>
     <tr>
-      <td class="right aligned"><%= Attitude.human_attribute_name(:opinion) %></td>
+      <td class="has-text-right"><%= Attitude.human_attribute_name(:opinion) %></td>
       <td><%= @attitude.opinion %></td>
     </tr>
     <tr>
-      <td class="right aligned"><%= Attitude.human_attribute_name(:attitudinal_type) %></td>
+      <td class="has-text-right"><%= Attitude.human_attribute_name(:attitudinal_type) %></td>
       <td><%= @attitude.attitudinal_type %></td>
     </tr>
     <tr>
-      <td class="right aligned"><%= Attitude.human_attribute_name(:attitudinal_id) %></td>
+      <td class="has-text-right"><%= Attitude.human_attribute_name(:attitudinal_id) %></td>
       <td><%= @attitude.attitudinal_id %></td>
     </tr>
   </tbody>
