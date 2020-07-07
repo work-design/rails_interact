@@ -1,4 +1,3 @@
-class Interact::Admin::BaseController < RailsInteract.config.admin_controller.constantize
+class Interact::Admin::BaseController < AdminController
 
-
-end
+end unless defined? Interact::Admin::BaseController

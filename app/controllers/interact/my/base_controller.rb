@@ -1,5 +1,3 @@
-class Interact::My::BaseController < RailsInteract.config.my_controller.constantize
+class Interact::My::BaseController < MyController
 
-
-
-end
+end unless defined? Interact::My::BaseController

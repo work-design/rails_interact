@@ -1,30 +1,31 @@
 GIT
   remote: https://github.com/qinmingyuan/default_form.git
-  revision: 10744237a6fc7f1a94ab07b2bfd2c38dc3a74f1c
+  revision: 99aded6b6ccf3a323eb361b9e23bb8c848e39bed
   specs:
     default_form (1.5.1)
       rails_com (~> 1.2)
 
 GIT
   remote: https://github.com/qinmingyuan/default_where.git
-  revision: cdd7f29202535f0d5179e875a9f588f8f945bb90
+  revision: c965b22763d7b3e6446b942d7e98c3ad67058d6b
   specs:
     default_where (2.2.3)
       activerecord (>= 4.0, <= 6.1)
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: cb2893df63e71a121f804808892c0e3340212939
+  revision: cfec597782b003d11e83c0d5c3c7a296e26a715f
   specs:
     rails_com (1.2.9)
       default_where (~> 2.2)
       http-form_data (~> 2.2)
       httpx (~> 0.8)
+      kaminari
       rails (~> 6.0)
 
 GIT
   remote: https://github.com/work-design/rails_notice.git
-  revision: 530e562c5c94b20996e80eca19e78f498a34e6e1
+  revision: 18394dce4cc1c442f3facb722accd738d2ea2985
   specs:
     rails_notice (1.0.2)
       rails_auth
@@ -32,7 +33,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_taxon.git
-  revision: 6688bb185f3d91be83d0a01e31d9f23cfda0c434
+  revision: 28217655786b35e7893fd8ae19b058d4adce02bd
   specs:
     rails_taxon (1.0.0)
       acts_as_list (>= 1.0)
@@ -130,6 +131,18 @@ GEM
     i18n (1.8.3)
       concurrent-ruby (~> 1.0)
     jwt (2.2.1)
+    kaminari (1.2.1)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.2.1)
+      kaminari-activerecord (= 1.2.1)
+      kaminari-core (= 1.2.1)
+    kaminari-actionview (1.2.1)
+      actionview
+      kaminari-core (= 1.2.1)
+    kaminari-activerecord (1.2.1)
+      activerecord
+      kaminari-core (= 1.2.1)
+    kaminari-core (1.2.1)
     loofah (2.6.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
