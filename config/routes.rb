@@ -35,7 +35,7 @@ Rails.application.routes.draw do
     end
   end
 
-  scope :admin, module: 'interact/admin', as: 'admin' do
+  scope :admin, module: 'interact/admin', as: :admin do
     resources :comments
     resources :attitudes
     resources :stars
