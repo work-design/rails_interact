@@ -1,6 +1,6 @@
 module Interact
   class Comment < ApplicationRecord
     include Model::Comment
-    include Model::Like
+    include Ext::Like
   end
 end
