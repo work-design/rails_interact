@@ -20,4 +20,4 @@ $ bundle
 Contribution directions go here.
 
 ## License
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+遵循 [MIT协议](https://opensource.org/licenses/MIT).
