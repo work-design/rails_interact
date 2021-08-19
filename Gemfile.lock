@@ -1,35 +1,35 @@
 GIT
   remote: https://github.com/qinmingyuan/default_form.git
-  revision: d0fbf0383bf8f9ec7941f79ad2dabd95a478e53b
+  revision: 476ba7231079b1071415ad4e953b55ce16ae1d0d
   specs:
     default_form (1.5.1)
       rails_com (~> 1.2)
 
 GIT
   remote: https://github.com/qinmingyuan/default_where.git
-  revision: 73338e8c9bf69cb2cb25ea0a62fee1fe0a0905ba
+  revision: bd6a1950ec0aea030cf741a38b58111a20d14b38
   specs:
-    default_where (2.2.3)
+    default_where (2.3.0)
       activerecord (>= 4.0, <= 7.0)
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: c94212c83a94b1be8050fcecb1e390f49b6a8f36
+  revision: 4829a61208ab5a358d43f43795c3e998b636a5b1
   specs:
     rails_com (1.2.9)
       acme-client
       acts_as_list (>= 1.0)
-      closure_tree (>= 7.2)
+      closure_tree (>= 7.3)
       default_where (~> 2.2)
-      http-form_data (~> 2.2)
-      httpx (~> 0.8)
+      http-form_data (~> 2.3)
+      httpx (~> 0.16)
       kaminari
-      rails (~> 6.0)
+      rails (~> 6.1)
       turbo-rails
 
 GIT
   remote: https://github.com/work-design/rails_notice.git
-  revision: 51667b63b1ac9fda1af2b14a17f26471d5a8425e
+  revision: 7e1f7a0d73004f5e24b15a613f09b434c987157f
   specs:
     rails_notice (1.0.2)
       rails_auth
@@ -121,7 +121,7 @@ GEM
     factory_bot_rails (6.2.0)
       factory_bot (~> 6.2.0)
       railties (>= 5.0.0)
-    faraday (1.5.1)
+    faraday (1.7.0)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
       faraday-excon (~> 1.1)
@@ -129,6 +129,7 @@ GEM
       faraday-net_http (~> 1.0)
       faraday-net_http_persistent (~> 1.1)
       faraday-patron (~> 1.0)
+      faraday-rack (~> 1.0)
       multipart-post (>= 1.2, < 3)
       ruby2_keywords (>= 0.0.4)
     faraday-em_http (1.0.0)
@@ -138,11 +139,12 @@ GEM
     faraday-net_http (1.0.1)
     faraday-net_http_persistent (1.2.0)
     faraday-patron (1.0.0)
+    faraday-rack (1.0.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    http-2-next (0.4.3)
+    http-2-next (0.5.0)
     http-form_data (2.3.0)
-    httpx (0.15.4)
+    httpx (0.16.1)
       http-2-next (>= 0.4.1)
       timers
     i18n (1.8.10)
@@ -221,7 +223,7 @@ GEM
     sqlite3 (1.4.2)
     thor (1.1.0)
     timers (4.3.3)
-    turbo-rails (0.5.12)
+    turbo-rails (0.7.3)
       rails (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
