@@ -14,7 +14,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 4829a61208ab5a358d43f43795c3e998b636a5b1
+  revision: 10567cb881fbba894485cc2b325346c3bbdaffc0
   specs:
     rails_com (1.2.9)
       acme-client
@@ -24,12 +24,12 @@ GIT
       http-form_data (~> 2.3)
       httpx (~> 0.16)
       kaminari
-      rails (~> 6.1)
+      rails (>= 6.1)
       turbo-rails
 
 GIT
   remote: https://github.com/work-design/rails_notice.git
-  revision: 7e1f7a0d73004f5e24b15a613f09b434c987157f
+  revision: c61206cd1deebf0e2531ba102237cfd6852b59e4
   specs:
     rails_notice (1.0.2)
       rails_auth
@@ -121,7 +121,7 @@ GEM
     factory_bot_rails (6.2.0)
       factory_bot (~> 6.2.0)
       railties (>= 5.0.0)
-    faraday (1.7.0)
+    faraday (1.7.1)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
       faraday-excon (~> 1.1)
@@ -223,7 +223,7 @@ GEM
     sqlite3 (1.4.2)
     thor (1.1.0)
     timers (4.3.3)
-    turbo-rails (0.7.3)
+    turbo-rails (0.7.8)
       rails (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
