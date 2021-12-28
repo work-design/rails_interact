@@ -29,7 +29,7 @@ GIT
 PATH
   remote: .
   specs:
-    rails_interact (0.1.0)
+    rails_interact (0.0.1)
       rails_com (~> 1.2)
       rails_notice (>= 0.1)
 
