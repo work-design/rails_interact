@@ -1,7 +1,3 @@
-<%= form_with model: @star, local: true do |f| %>
-  <%= render 'error_messages', target: @star %>
-  <%= f.text_field :user_id %>
-  <%= f.text_field :starred_type %>
-  <%= f.text_field :starred_id %>
-  <%= f.submit %>
-<% end %>
+<%= f.text_field :user_id %>
+<%= f.text_field :starred_type %>
+<%= f.text_field :starred_id %>

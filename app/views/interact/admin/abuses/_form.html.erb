@@ -1,8 +1,4 @@
-<%= form_with model: @abuse, local: true do |f| %>
-  <%= render 'error_messages', target: @abuse %>
-  <%= f.text_field :abusement %>
-  <%= f.text_field :state %>
-  <%= f.text_field :note %>
-  <%= f.text_field :user %>
-  <%= f.submit %>
-<% end %>
+<%= f.text_field :abusement %>
+<%= f.text_field :state %>
+<%= f.text_field :note %>
+<%= f.text_field :user %>
