@@ -13,7 +13,7 @@ module Interact
 
       delegate :name, to: :user, prefix: true
 
-      enum opinion: {
+      enum :opinion, {
         liked: 'liked',
         disliked: 'disliked',
         like_canceled: 'like_canceled',
